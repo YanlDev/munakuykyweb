@@ -1,0 +1,47 @@
+---
+import '../../styles/components/navbar.css';
+import Logo from '../common/Logo.astro';
+import NavLink from '../common/NavLink.astro';
+import MobileMenuButton from '../common/MobileMenuButton.astro';
+
+// Definir las rutas de navegación
+const navItems = [
+  { text: "Inicio", url: "/" },
+  { text: "Regalos para hombres", url: "/regalos/hombres" },
+  { text: "Regalos para damas", url: "/regalos/damas" },
+  { text: "Regalos para parejas", url: "/regalos/parejas" },
+  { text: "Postres especiales", url: "/postres-especiales" }
+];
+
+const activeUrl = Astro.url.pathname;
+---
+
+<header class="header">
+  <div class="container">
+    <div class="navbar">
+      <Logo />
+      
+      <MobileMenuButton />
+      
+      <!-- Menú de navegación -->
+      <nav class="nav-menu">
+        <ul class="nav-list">
+          {
+            navItems.map((item) => (
+              <NavLink 
+                href={item.url}
+                text={item.text}
+                isActive={activeUrl === item.url}
+              />
+            ))
+          }
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- Importar el script desde su archivo separado -->
+<script>
+  import '../../scripts/navbar.js';
+</script>

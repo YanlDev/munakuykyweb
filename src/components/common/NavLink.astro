@@ -1,0 +1,17 @@
+---
+const { 
+  href, 
+  text, 
+  isActive = false
+} = Astro.props;
+---
+
+<li class="nav-item">
+  <a 
+    href={href} 
+    class={`nav-link ${isActive ? 'active' : ''}`}
+    aria-current={isActive ? 'page' : undefined}
+  >
+    {text}
+  </a>
+</li>

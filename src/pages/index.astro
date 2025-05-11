@@ -1,16 +1,12 @@
 ---
-
+import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="Inicio">
+  <section class="hero">
+    <div class="container">
+      <h1>Bienvenidos a Munakuyki</h1>
+      <p>Regalos y detalles especiales para toda ocasión</p>
+    </div>
+  </section>
+</MainLayout>
