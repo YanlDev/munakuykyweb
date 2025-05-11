@@ -1,0 +1,88 @@
+---
+// src/components/productos/ProductGrid.astro
+import ProductCard from './ProductCard.astro';
+
+interface Props {
+  productos: Array<any>;
+  titulo?: string;
+  columnas?: number;
+  showDescription?: boolean;
+}
+
+const { 
+  productos, 
+  titulo, 
+  columnas = 3, 
+  showDescription = true 
+} = Astro.props;
+---
+
+<div class="product-grid-container">
+  {titulo && <h2 class="grid-title">{titulo}</h2>}
+  
+  <div class={`product-grid cols-${columnas}`}>
+    {productos.map(item => (
+      <div class="product-grid-item">
+        <ProductCard 
+          producto={item} 
+          familia={item.familia} 
+          categoria={item.categoria}
+          showDescription={showDescription}
+        />
+      </div>
+    ))}
+  </div>
+  
+  {productos.length === 0 && (
+    <div class="no-products">
+      <p>No se encontraron productos.</p>
+    </div>
+  )}
+</div>
+
+<style>
+  .product-grid-container {
+    margin-bottom: 2rem;
+  }
+  
+  .grid-title {
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    color: var(--color-cafe-nogal);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .product-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  .cols-1 { grid-template-columns: repeat(1, 1fr); }
+  .cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .cols-4 { grid-template-columns: repeat(4, 1fr); }
+  
+  .product-grid-item {
+    height: 100%;
+  }
+  
+  .no-products {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius-md);
+  }
+  
+  @media (max-width: 992px) {
+    .cols-3, .cols-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .product-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

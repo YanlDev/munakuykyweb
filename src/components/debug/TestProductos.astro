@@ -1,0 +1,57 @@
+---
+// Este es un componente temporal para probar la carga de datos
+import { getFamilias, getProductosDestacados } from "../../utils/productos";
+
+const familias = getFamilias();
+const destacados = getProductosDestacados();
+---
+
+<div class="test-container">
+  <h2>Prueba de Carga de Datos</h2>
+  
+  <h3>Familias de Productos</h3>
+  <ul>
+    {familias.map(familia => (
+      <li>
+        <strong>{familia.nombre}</strong> - {familia.id}
+        <ul>
+          {familia.categorias.map(categoria => (
+            <li>{categoria.nombre} ({categoria.productos.length} productos)</li>
+          ))}
+        </ul>
+      </li>
+    ))}
+  </ul>
+  
+  <h3>Productos Destacados ({destacados.length})</h3>
+  <ul>
+    {destacados.map(producto => (
+      <li>
+        <strong>{producto.nombre}</strong> - {producto.precio} {producto.moneda}
+        <br />
+        <small>Familia: {producto.familia.nombre}, Categoría: {producto.categoria.nombre}</small>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  .test-container {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+  }
+  
+  h2, h3 {
+    color: #54361f;
+  }
+  
+  ul {
+    margin-left: 1rem;
+  }
+  
+  li {
+    margin-bottom: 0.5rem;
+  }
+</style>

@@ -1,0 +1,479 @@
+{
+  "familias": [
+    {
+      "id": "desayunos",
+      "nombre": "Desayunos Sorpresa",
+      "slug": "desayunos-sorpresa",
+      "descripcion": "Sorprende con un desayuno especial para celebrar momentos únicos",
+      "imagen": "/assets/images/categorias/desayunos.jpg",
+      "paginas_relacionadas": [
+        "regalos-hombres",
+        "regalos-damas",
+        "regalos-parejas"
+      ],
+      "categorias": [
+        {
+          "id": "desayunos-basicos",
+          "nombre": "Desayunos Básicos",
+          "slug": "desayunos-basicos",
+          "descripcion": "Desayunos sorpresa con el toque perfecto para iniciar el día",
+          "productos": [
+            {
+              "id": "d001",
+              "codigo": "D001",
+              "nombre": "Desayuno Sorpresa Premium",
+              "slug": "desayuno-sorpresa-premium",
+              "descripcion": "Desayuno completo para sorprender en una ocasión especial",
+              "detalle": [
+                "1 jugo natural",
+                "1 sándwich (tocino, huevo, palta y tomate)",
+                "1 mini rosaeterna",
+                "Caja decorativa personalizada",
+                "Foto personalizada con frase",
+                "1 Chocolate bon o bon",
+                "Tarjeta de cortesía"
+              ],
+              "precio": 38.0,
+              "moneda": "PEN",
+              "disponibilidad": "disponible",
+              "destacado": true,
+              "nuevo": false,
+              "imagenes": ["/assets/images/productos/desayunos/d001_1.jpg"],
+              "etiquetas": [
+                "desayuno sorpresa",
+                "día de la madre",
+                "personalizado"
+              ],
+              "personalizable": true,
+              "opciones_personalizacion": ["mensaje", "foto", "sabores"],
+              "ocasiones": ["día de la madre", "cumpleaños", "aniversario"],
+              "tiempo_preparacion": "24 horas"
+            }
+          ]
+        },
+        {
+          "id": "desayunos-premium",
+          "nombre": "Desayunos Premium",
+          "slug": "desayunos-premium",
+          "descripcion": "Desayunos sorpresa completos con productos de alta calidad",
+          "productos": [
+            {
+              "id": "d002",
+              "codigo": "D002",
+              "nombre": "Desayuno Premium Deluxe",
+              "slug": "desayuno-premium-deluxe",
+              "descripcion": "Desayuno abundante con variedad de productos gourmet",
+              "detalle": [
+                "1 chocolate fondy",
+                "1 cupcake",
+                "1 jugo natural",
+                "1 yogurt griego",
+                "1 rosa natural",
+                "1 sándwich (tocino, huevo, palta y tomate)",
+                "3 fotos con frase",
+                "1 ensalada de frutas",
+                "Tarjeta de cortesía"
+              ],
+              "precio": 55.0,
+              "moneda": "PEN",
+              "disponibilidad": "disponible",
+              "destacado": true,
+              "nuevo": false,
+              "imagenes": ["/assets/images/productos/desayunos/d002_1.jpg"],
+              "etiquetas": [
+                "desayuno completo",
+                "desayuno premium",
+                "sorpresa especial"
+              ],
+              "personalizable": true,
+              "opciones_personalizacion": ["mensaje", "foto", "sabores"],
+              "ocasiones": ["día de la madre", "cumpleaños", "aniversario"],
+              "tiempo_preparacion": "24 horas"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "postres",
+      "nombre": "Postres Especiales",
+      "slug": "postres-especiales",
+      "descripcion": "Deliciosos postres para regalar en momentos especiales",
+      "imagen": "/assets/images/categorias/postres.jpg",
+      "paginas_relacionadas": ["postres-especiales"],
+      "categorias": [
+        {
+          "id": "mini-tortas",
+          "nombre": "Mini Tortas y Cupcakes",
+          "slug": "mini-tortas-cupcakes",
+          "descripcion": "Pequeños postres llenos de sabor para regalar",
+          "productos": [
+            {
+              "id": "mt001",
+              "codigo": "MT001",
+              "nombre": "Mini Torta con Cupcakes",
+              "slug": "mini-torta-con-cupcakes",
+              "descripcion": "Delicioso set con mini torta y cupcakes para celebrar",
+              "detalle": [
+                "Una mini torta de 10 cm",
+                "2 cupcakes",
+                "1 rosa eterna",
+                "Tarjeta de cortesía"
+              ],
+              "precio": 45.0,
+              "moneda": "PEN",
+              "disponibilidad": "disponible",
+              "destacado": false,
+              "nuevo": true,
+              "imagenes": ["/assets/images/productos/postres/mt001_1.jpg"],
+              "etiquetas": ["mini torta", "cupcakes", "postre", "celebración"],
+              "personalizable": true,
+              "opciones_personalizacion": ["mensaje", "sabor", "decoración"],
+              "ocasiones": ["cumpleaños", "aniversario", "celebraciones"],
+              "tiempo_preparacion": "48 horas"
+            }
+          ]
+        },
+        {
+          "id": "fresas-chocolate",
+          "nombre": "Fresas con Chocolate",
+          "slug": "fresas-chocolate",
+          "descripcion": "Deliciosas fresas cubiertas de chocolate en presentaciones especiales",
+          "productos": [
+            {
+              "id": "fc001",
+              "codigo": "FC001",
+              "nombre": "Fresas con Chocolate en Vasito",
+              "slug": "fresas-chocolate-vasito",
+              "descripcion": "Fresas cubiertas de chocolate en un elegante vasito",
+              "detalle": [
+                "10 fresitas con chocolate en vasito",
+                "Tarjeta de cortesía"
+              ],
+              "precio": 35.0,
+              "moneda": "PEN",
+              "disponibilidad": "disponible",
+              "destacado": false,
+              "nuevo": false,
+              "imagenes": ["/assets/images/productos/fresas/fc001_1.jpg"],
+              "etiquetas": ["fresas", "chocolate", "regalo pequeño"],
+              "personalizable": true,
+              "opciones_personalizacion": ["mensaje"],
+              "ocasiones": ["cumpleaños", "aniversario", "detalle romántico"],
+              "tiempo_preparacion": "24 horas"
+            },
+            {
+              "id": "fc002",
+              "codigo": "FC002",
+              "nombre": "Box de Fresas con Chocolate",
+              "slug": "box-fresas-chocolate",
+              "descripcion": "Caja con deliciosas fresas cubiertas de chocolate",
+              "detalle": ["12 fresas con chocolate", "Tarjeta de cortesía"],
+              "precio": 45.0,
+              "moneda": "PEN",
+              "disponibilidad": "disponible",
+              "destacado": true,
+              "nuevo": false,
+              "imagenes": ["/assets/images/productos/fresas/fc002_1.jpg"],
+              "etiquetas": ["fresas", "chocolate", "caja regalo"],
+              "personalizable": true,
+              "opciones_personalizacion": ["mensaje", "tipo de chocolate"],
+              "ocasiones": ["cumpleaños", "aniversario", "detalle romántico"],
+              "tiempo_preparacion": "24 horas"
+            },
+            {
+              "id": "fc003",
+              "codigo": "FC003",
+              "nombre": "Bouquet Fresas con Rosas",
+              "slug": "bouquet-fresas-rosas",
+              "descripcion": "Elegante bouquet con fresas con chocolate y rosas",
+              "detalle": [
+                "6 rosas naturales",
+                "8 fresas con chocolate",
+                "Tarjeta de cortesía"
+              ],
+              "precio": 77.0,
+              "moneda": "PEN",
+              "disponibilidad": "disponible",
+              "destacado": true,
+              "nuevo": false,
+              "imagenes": ["/assets/images/productos/fresas/fc003_1.jpg"],
+              "etiquetas": ["fresas", "chocolate", "rosas", "bouquet"],
+              "personalizable": true,
+              "opciones_personalizacion": ["mensaje", "color de rosas"],
+              "ocasiones": ["aniversario", "San Valentín", "romántico"],
+              "tiempo_preparacion": "24 horas"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ramos-naturales",
+      "nombre": "Ramos y Flores Naturales",
+      "slug": "ramos-flores-naturales",
+      "descripcion": "Hermosos arreglos florales con flores frescas de temporada",
+      "imagen": "/assets/images/categorias/ramos-naturales.jpg",
+      "paginas_relacionadas": [
+        "regalos-hombres",
+        "regalos-damas",
+        "regalos-parejas"
+      ],
+      "categorias": [
+        {
+          "id": "ramos-rosas",
+          "nombre": "Ramos de Rosas",
+          "slug": "ramos-rosas",
+          "descripcion": "Elegantes ramos con rosas frescas",
+          "productos": [
+            {
+              "id": "rn001",
+              "codigo": "RN001",
+              "nombre": "Ramo Básico de Rosas",
+              "slug": "ramo-basico-rosas",
+              "descripcion": "Ramo de 3 rosas rojas con acabado coreano y decoración especial",
+              "detalle": [
+                "3 rosas naturales",
+                "Papel coreano premium",
+                "Tarjeta de cortesía"
+              ],
+              "precio": 35.0,
+              "moneda": "PEN",
+              "disponibilidad": "disponible",
+              "destacado": false,
+              "nuevo": false,
+              "imagenes": ["/assets/images/productos/ramos/rn001_1.jpg"],
+              "etiquetas": ["rosas", "ramo", "flores naturales"],
+              "personalizable": true,
+              "opciones_personalizacion": ["mensaje", "color de rosas"],
+              "ocasiones": ["cumpleaños", "aniversario", "romántico"],
+              "tiempo_preparacion": "24 horas"
+            },
+            {
+              "id": "rn002",
+              "codigo": "RN002",
+              "nombre": "Ramo de 8 Rosas",
+              "slug": "ramo-8-rosas",
+              "descripcion": "Elegante ramo con 8 hermosas rosas rojas",
+              "detalle": ["8 rosas naturales", "Tarjeta de cortesía"],
+              "precio": 50.0,
+              "moneda": "PEN",
+              "disponibilidad": "disponible",
+              "destacado": true,
+              "nuevo": false,
+              "imagenes": ["/assets/images/productos/ramos/rn002_1.jpg"],
+              "etiquetas": ["rosas", "ramo", "flores naturales"],
+              "personalizable": true,
+              "opciones_personalizacion": ["mensaje", "color de rosas"],
+              "ocasiones": ["cumpleaños", "aniversario", "romántico"],
+              "tiempo_preparacion": "24 horas"
+            }
+          ]
+        },
+        {
+          "id": "ramos-mixtos",
+          "nombre": "Ramos Mixtos",
+          "slug": "ramos-mixtos",
+          "descripcion": "Hermosos ramos con combinaciones de diferentes flores",
+          "productos": [
+            {
+              "id": "rm001",
+              "codigo": "RM001",
+              "nombre": "Ramo Rosa con Girasol",
+              "slug": "ramo-rosa-girasol",
+              "descripcion": "Hermoso ramo combinado con rosas y girasol",
+              "detalle": [
+                "3 rosas",
+                "1 girasol",
+                "1 chocolate",
+                "Tarjeta de cortesía"
+              ],
+              "precio": 45.0,
+              "moneda": "PEN",
+              "disponibilidad": "disponible",
+              "destacado": true,
+              "nuevo": false,
+              "imagenes": ["/assets/images/productos/ramos/rm001_1.jpg"],
+              "etiquetas": ["rosas", "girasol", "ramo mixto"],
+              "personalizable": true,
+              "opciones_personalizacion": ["mensaje", "color de rosas"],
+              "ocasiones": ["cumpleaños", "aniversario", "amistad"],
+              "tiempo_preparacion": "24 horas"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ramos-eternos",
+      "nombre": "Ramos y Flores Eternas",
+      "slug": "ramos-flores-eternas",
+      "descripcion": "Hermosos arreglos con rosas eternas que duran meses",
+      "imagen": "/assets/images/categorias/ramos-eternos.jpg",
+      "paginas_relacionadas": [
+        "regalos-hombres",
+        "regalos-damas",
+        "regalos-parejas"
+      ],
+      "categorias": [
+        {
+          "id": "ramos-rosas-eternas",
+          "nombre": "Ramos de Rosas Preservadas",
+          "slug": "ramos-rosas-preservadas",
+          "descripcion": "Elegantes ramos con rosas preservadas que duran meses",
+          "productos": [
+            {
+              "id": "re001",
+              "codigo": "RE001",
+              "nombre": "Ramo Eterno Básico",
+              "slug": "ramo-eterno-basico",
+              "descripcion": "Hermoso ramo con rosas eternas y detalles de chocolate",
+              "detalle": [
+                "1 cinta de feliz día mamá",
+                "16 rosas preservadas",
+                "4 chocolates",
+                "Envoltura papel coreano premium",
+                "Bolsa para llevar",
+                "Tarjeta de cortesía"
+              ],
+              "precio": 70.0,
+              "moneda": "PEN",
+              "disponibilidad": "disponible",
+              "destacado": true,
+              "nuevo": false,
+              "imagenes": ["/assets/images/productos/ramos/re001_1.jpg"],
+              "etiquetas": ["rosas eternas", "ramo", "flores preservadas"],
+              "personalizable": true,
+              "opciones_personalizacion": ["mensaje", "color de rosas"],
+              "ocasiones": ["cumpleaños", "aniversario", "día de la madre"],
+              "tiempo_preparacion": "24 horas"
+            }
+          ]
+        },
+        {
+          "id": "detalles-rosas-eternas",
+          "nombre": "Detalles con Rosas Eternas",
+          "slug": "detalles-rosas-eternas",
+          "descripcion": "Pequeños arreglos y detalles con rosas preservadas",
+          "productos": [
+            {
+              "id": "dre001",
+              "codigo": "DRE001",
+              "nombre": "Detalle Globo y Rosas",
+              "slug": "detalle-globo-rosas",
+              "descripcion": "Hermoso arreglo con globo y rosas eternas",
+              "detalle": [
+                "1 globo por ser la mejor mamá",
+                "4 rosas eternas",
+                "1 taza decorativa",
+                "Tarjeta de cortesía"
+              ],
+              "precio": 40.0,
+              "moneda": "PEN",
+              "disponibilidad": "disponible",
+              "destacado": false,
+              "nuevo": false,
+              "imagenes": ["/assets/images/productos/detalles/dre001_1.jpg"],
+              "etiquetas": ["rosas eternas", "globo", "taza", "regalo mamá"],
+              "personalizable": true,
+              "opciones_personalizacion": ["mensaje", "color de rosas"],
+              "ocasiones": ["día de la madre", "cumpleaños"],
+              "tiempo_preparacion": "24 horas"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "detalles-especiales",
+      "nombre": "Detalles y Regalos Especiales",
+      "slug": "detalles-regalos-especiales",
+      "descripcion": "Sorprende con detalles únicos y personalizados",
+      "imagen": "/assets/images/categorias/detalles-especiales.jpg",
+      "paginas_relacionadas": [
+        "regalos-hombres",
+        "regalos-damas",
+        "regalos-parejas"
+      ],
+      "categorias": [
+        {
+          "id": "cuadros",
+          "nombre": "Cuadros Personalizados",
+          "slug": "cuadros-personalizados",
+          "descripcion": "Hermosos cuadros personalizados con fotos y mensajes especiales",
+          "productos": [
+            {
+              "id": "cp001",
+              "codigo": "CP001",
+              "nombre": "Cuadro Básico Personalizado",
+              "slug": "cuadro-basico-personalizado",
+              "descripcion": "Cuadro con foto personalizada y chocolate de regalo",
+              "detalle": [
+                "Cuadro 10x15",
+                "1 chocolate vizzio",
+                "1 rosa eterna",
+                "Caja de regalo con diseño",
+                "Posibilidad de personalizar con foto"
+              ],
+              "precio": 35.0,
+              "moneda": "PEN",
+              "disponibilidad": "disponible",
+              "destacado": false,
+              "nuevo": false,
+              "imagenes": ["/assets/images/productos/cuadros/cp001_1.jpg"],
+              "etiquetas": ["cuadro", "foto", "personalizado", "regalo"],
+              "personalizable": true,
+              "opciones_personalizacion": [
+                "foto",
+                "mensaje",
+                "modelo de cuadro"
+              ],
+              "ocasiones": ["cumpleaños", "aniversario", "día de la madre"],
+              "tiempo_preparacion": "48 horas"
+            },
+            {
+              "id": "cg001",
+              "codigo": "CG001",
+              "nombre": "Cuadro Giratorio Personalizado",
+              "slug": "cuadro-giratorio-personalizado",
+              "descripcion": "Cuadro giratorio con múltiples fotos personalizadas",
+              "detalle": [
+                "Cuadro giratorio",
+                "Frase personalizada",
+                "2 fotos a elección",
+                "1 chocolate",
+                "Lazos decorativos",
+                "4 rosas",
+                "Tarjeta de cortesía"
+              ],
+              "precio": 50.0,
+              "moneda": "PEN",
+              "disponibilidad": "disponible",
+              "destacado": true,
+              "nuevo": true,
+              "imagenes": [
+                "/assets/images/productos/cuadros/cg001_1.jpg",
+                "/assets/images/productos/cuadros/cg001_2.jpg"
+              ],
+              "etiquetas": [
+                "cuadro giratorio",
+                "fotos",
+                "personalizado",
+                "regalo especial"
+              ],
+              "personalizable": true,
+              "opciones_personalizacion": ["fotos", "frase", "color de marco"],
+              "ocasiones": [
+                "cumpleaños",
+                "aniversario",
+                "día de la madre",
+                "navidad"
+              ],
+              "tiempo_preparacion": "72 horas"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,12 +1,215 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import ProductGrid from '../components/productos/ProductGrid.astro';
+import { getProductosDestacados, getFamilias } from '../utils/productos';
+import '../styles/pages/home.css';
+
+// Obtener productos destacados y familias
+const destacados = getProductosDestacados();
+const familias = getFamilias();
 ---
 
 <MainLayout title="Inicio">
+  <!-- Hero Section / Banner Principal -->
+  <!-- Hero Section / Banner Principal con slideshow -->
   <section class="hero">
-    <div class="container">
-      <h1>Bienvenidos a Munakuyki</h1>
-      <p>Regalos y detalles especiales para toda ocasión</p>
+    <div class="hero-content">
+      <h1>Detalles <span class="accent">que enamoran</span></h1>
+      <p>
+        Sorprende a esa persona especial con regalos únicos, hechos con amor
+        para momentos inolvidables
+      </p>
+      <div class="hero-buttons">
+        <a href="#familias" class="btn btn-primary">Explorar Categorías</a>
+        <a href="#destacados" class="btn btn-outline">Ver Destacados</a>
+      </div>
+    </div>
+
+    <div class="hero-slideshow">
+      <div
+        class="slide active"
+        style="background-image: url('/assets/images/hero-image.png')"
+      >
+      </div>
+      <div
+        class="slide"
+        style="background-image: url('/assets/images/hero-image-2.png')"
+      >
+      </div>
+      <div
+        class="slide"
+        style="background-image: url('/assets/images/hero-image-3.png')"
+      >
+      </div>
+
+      <div class="slideshow-controls">
+        <button class="control-dot active" data-slide="0"></button>
+        <button class="control-dot" data-slide="1"></button>
+        <button class="control-dot" data-slide="2"></button>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M12 17.414L3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z"
+        ></path>
+      </svg>
     </div>
   </section>
+  <!-- Sección de Destacados -->
+  <section id="destacados" class="destacados">
+    <div class="container">
+      <h2 class="section-title">Nuestros Productos Destacados</h2>
+      <p class="section-subtitle">Lo más pedido por nuestros clientes</p>
+
+      <ProductGrid
+        productos={destacados.slice(0, 4)}
+        columnas={4}
+        showDescription={false}
+      />
+
+      <div class="text-center mt-4">
+        <a href="/destacados" class="btn btn-secondary"
+          >Ver todos los destacados</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- Secciones por Familia -->
+  <section id="familias" class="familias">
+    <div class="container">
+      <h2 class="section-title">Explora Nuestras Categorías</h2>
+      <p class="section-subtitle">Encuentra el regalo perfecto</p>
+
+      <div class="familias-grid">
+        {
+          familias.map((familia) => (
+            <a href={`/${familia.slug}`} class="familia-card">
+              <div class="familia-image">
+                <img
+                  src={
+                    familia.imagen ||
+                    `/assets/images/categorias/${familia.id}.jpg`
+                  }
+                  alt={familia.nombre}
+                  loading="lazy"
+                />
+                <div class="familia-overlay" />
+              </div>
+              <div class="familia-info">
+                <h3>{familia.nombre}</h3>
+                <span class="arrow-icon">→</span>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner de Ocasiones -->
+  <section class="ocasiones">
+    <div class="container">
+      <h2 class="section-title">Para Cada Ocasión Especial</h2>
+      <p class="section-subtitle">El regalo perfecto en el momento perfecto</p>
+
+      <div class="ocasiones-grid">
+        <a href="/ocasion/cumpleanos" class="ocasion-card">
+          <div class="ocasion-icon">🎂</div>
+          <h3>Cumpleaños</h3>
+        </a>
+        <a href="/ocasion/aniversario" class="ocasion-card">
+          <div class="ocasion-icon">💍</div>
+          <h3>Aniversarios</h3>
+        </a>
+        <a href="/ocasion/dia-madre" class="ocasion-card">
+          <div class="ocasion-icon">👩‍👧</div>
+          <h3>Día de la Madre</h3>
+        </a>
+        <a href="/ocasion/san-valentin" class="ocasion-card">
+          <div class="ocasion-icon">❤️</div>
+          <h3>San Valentín</h3>
+        </a>
+        <a href="/ocasion/navidad" class="ocasion-card">
+          <div class="ocasion-icon">🎄</div>
+          <h3>Navidad</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Testimonios (opcional) -->
+  <section class="testimonios">
+    <div class="container">
+      <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+
+      <div class="testimonios-slider">
+        <div class="testimonio">
+          <div class="testimonio-contenido">
+            <p>
+              "Quedé encantada con mi desayuno sorpresa, todo llegó a tiempo y
+              la presentación era hermosa."
+            </p>
+          </div>
+          <div class="testimonio-autor">
+            <p><strong>María R.</strong></p>
+          </div>
+        </div>
+
+        <div class="testimonio">
+          <div class="testimonio-contenido">
+            <p>
+              "El ramo de rosas eternas que regalé a mi mamá está intacto
+              después de meses. Un detalle que realmente dura."
+            </p>
+          </div>
+          <div class="testimonio-autor">
+            <p><strong>Carlos P.</strong></p>
+          </div>
+        </div>
+
+        <div class="testimonio">
+          <div class="testimonio-contenido">
+            <p>
+              "Las fresas con chocolate fueron el detalle perfecto para
+              sorprender a mi pareja. Presentación y sabor excepcionales."
+            </p>
+          </div>
+          <div class="testimonio-autor">
+            <p><strong>Ana L.</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner de CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-content">
+        <h2>¿No sabes qué regalar?</h2>
+        <p>Permítenos ayudarte a encontrar el regalo perfecto</p>
+        <a href="https://wa.me/51999888777" class="btn btn-primary btn-lg">
+          <span class="whatsapp-icon">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM16.64 15.55C16.37 16.19 15.42 16.72 14.71 16.87C14.21 16.97 13.55 17.05 11.1 16.05C8.05 14.83 6.03 11.73 5.87 11.5C5.72 11.27 4.77 9.97 4.77 8.63C4.77 7.29 5.44 6.64 5.73 6.33C5.97 6.07 6.36 5.95 6.74 5.95C6.86 5.95 6.97 5.96 7.07 5.96C7.36 5.97 7.5 5.99 7.7 6.4C7.95 6.92 8.47 8.26 8.55 8.44C8.63 8.62 8.71 8.85 8.59 9.08C8.48 9.32 8.39 9.42 8.21 9.63C8.03 9.84 7.86 10.01 7.68 10.23C7.51 10.42 7.32 10.63 7.53 10.98C7.74 11.32 8.47 12.46 9.5 13.37C10.83 14.54 11.94 14.91 12.33 15.08C12.63 15.21 12.98 15.19 13.19 14.94C13.45 14.62 13.77 14.09 14.1 13.56C14.33 13.19 14.63 13.14 14.95 13.27C15.28 13.39 16.61 14.05 16.97 14.23C17.33 14.41 17.58 14.5 17.66 14.65C17.73 14.8 17.73 15.36 17.46 16Z"
+                fill="currentColor"></path>
+            </svg>
+          </span>
+          Contáctanos por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- Importar el script del slideshow -->
+  <script src="../scripts/hero-slideshow.js"></script>
 </MainLayout>

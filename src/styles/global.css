@@ -1,6 +1,10 @@
 /* Importación de fuentes */
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap');
+
+/* Importar componentes */
 @import './components/navbar.css';
+@import './components/buttons.css';
+
 /* Variables globales */
 :root {
   /* Colores principales */
@@ -131,39 +135,20 @@ a:hover {
   border-width: 0;
 }
 
-/* Botones */
-.btn {
-  display: inline-block;
-  font-family: var(--font-primary);
-  font-weight: 400;
-  padding: var(--spacing-sm) var(--spacing-lg);
-  background-color: var(--color-rosa-melocoton);
-  color: white;
-  border: none;
-  border-radius: var(--border-radius-sm);
-  cursor: pointer;
-  transition: all var(--transition-default);
-  text-align: center;
+/* Accesibilidad - focus visible */
+:focus-visible {
+  outline: 3px solid var(--color-rosa-melocoton);
+  outline-offset: 2px;
 }
 
-.btn:hover {
-  background-color: var(--color-verde-oliva);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+/* Imágenes */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-.btn-outline {
-  background-color: transparent;
-  border: 2px solid var(--color-rosa-melocoton);
-  color: var(--color-rosa-melocoton);
-}
-
-.btn-outline:hover {
-  background-color: var(--color-rosa-melocoton);
-  color: white;
-}
-
-/* Media queries */
+/* Media queries generales */
 @media (max-width: 768px) {
   html {
     font-size: 14px;
@@ -176,17 +161,4 @@ a:hover {
   .section {
     padding: var(--spacing-lg) 0;
   }
-}
-
-/* Accesibilidad - focus visible */
-:focus-visible {
-  outline: 3px solid var(--color-rosa-melocoton);
-  outline-offset: 2px;
-}
-
-/* Imágenes */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
 }

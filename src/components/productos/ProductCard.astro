@@ -1,0 +1,236 @@
+---
+// src/components/productos/ProductCard.astro
+interface Props {
+  producto: {
+    id: string;
+    nombre: string;
+    slug: string;
+    precio: number;
+    moneda: string;
+    descripcion: string;
+    imagenes: string[];
+    destacado: boolean;
+    nuevo: boolean;
+    disponibilidad: string;
+  };
+  familia?: {
+    id: string;
+    nombre: string;
+    slug: string;
+  };
+  categoria?: {
+    id: string;
+    nombre: string;
+    slug: string;
+  };
+  showDescription?: boolean;
+}
+
+const { producto, familia, categoria, showDescription = true } = Astro.props;
+const { id, nombre, precio, moneda, descripcion, imagenes, destacado, nuevo, disponibilidad, slug } = producto;
+
+// Construir la URL del producto basada en familia, categoría y slug
+let productUrl = `/producto/${slug}`;
+
+// Si tenemos información de familia y categoría, construir una URL más específica
+if (familia && categoria) {
+  productUrl = `/${familia.slug}/${categoria.slug}/${slug}`;
+}
+
+// Verificar si hay imagen, o usar una imagen placeholder
+const imageSrc = imagenes && imagenes.length > 0 
+                ? imagenes[0] 
+                : "https://via.placeholder.com/300x300.png?text=Munakuyki";
+
+// Formatear precio
+const precioFormateado = precio.toFixed(2);
+---
+
+<div class="product-card">
+  {nuevo && <span class="badge-new">Nuevo</span>}
+  {destacado && <span class="badge-featured">Destacado</span>}
+  
+  {disponibilidad === "agotado" && 
+    <div class="agotado-overlay">Agotado</div>
+  }
+  
+  <a href={productUrl} class="product-link">
+    <div class="product-image">
+      <img src={imageSrc} alt={nombre} loading="lazy" />
+    </div>
+    
+    <div class="product-info">
+      <h3 class="product-title">{nombre}</h3>
+      
+      {showDescription && 
+        <p class="product-description">{descripcion}</p>
+      }
+      
+      <div class="product-price">
+        <span class="currency">S/</span>
+        <span class="amount">{precioFormateado}</span>
+        <span class="currency-code">{moneda}</span>
+      </div>
+      
+      <button class="btn-view">Ver detalle</button>
+    </div>
+  </a>
+</div>
+
+<style>
+  .product-card {
+    background-color: white;
+    border-radius: var(--border-radius-md, 8px);
+    box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.1));
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
+  }
+  
+  .badge-new, 
+  .badge-featured {
+    position: absolute;
+    top: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    z-index: 2;
+  }
+  
+  .badge-new {
+    right: 10px;
+    background-color: var(--color-rosa-melocoton, #e19887);
+    color: white;
+  }
+  
+  .badge-featured {
+    left: 10px;
+    background-color: var(--color-verde-oliva, #958952);
+    color: white;
+  }
+  
+  .agotado-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    z-index: 3;
+  }
+  
+  .product-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .product-image {
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card:hover .product-image img {
+    transform: scale(1.05);
+  }
+  
+  .product-info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  
+  .product-title {
+    font-family: var(--font-primary, 'Playwrite DK Loopet', sans-serif);
+    font-size: var(--font-size-lg, 1.25rem);
+    color: var(--color-cafe-nogal, #54361f);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+  
+  .product-description {
+    font-size: var(--font-size-sm, 0.875rem);
+    color: #666;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex-grow: 1;
+  }
+  
+  .product-price {
+    font-weight: bold;
+    font-size: var(--font-size-lg, 1.25rem);
+    color: var(--color-cafe-nogal, #54361f);
+    margin-bottom: 1rem;
+  }
+  
+  .currency {
+    font-size: 0.8em;
+  }
+  
+  .amount {
+    font-size: 1.2em;
+  }
+  
+  .currency-code {
+    display: none;
+  }
+  
+  .btn-view {
+    background-color: var(--color-rosa-melocoton, #e19887);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-sm, 4px);
+    font-family: var(--font-primary, 'Playwrite DK Loopet', sans-serif);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: auto;
+  }
+  
+  .btn-view:hover {
+    background-color: var(--color-verde-oliva, #958952);
+  }
+  
+  @media (max-width: 768px) {
+    .product-image {
+      height: 180px;
+    }
+    
+    .product-title {
+      font-size: var(--font-size-base, 1rem);
+    }
+    
+    .product-info {
+      padding: 0.75rem;
+    }
+  }
+</style>
